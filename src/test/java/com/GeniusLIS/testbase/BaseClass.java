@@ -35,7 +35,7 @@ public class BaseClass {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			break;
-		case "Safari" :
+		case "safari" :
 			driver  = new SafariDriver();
 			break;
 		default : 
