@@ -1,66 +1,77 @@
 package com.GeniusLIS.steps;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 import com.GeniusLIS.pages.LoginPageElements;
+import com.GeniusLIS.testbase.PageInitializer;
 import com.GeniusLIS.utils.CommonMethods;
 
 import cucumber.api.java.en.*;
 
-public class Login extends CommonMethods{
-	
-	LoginPageElements signUp = new LoginPageElements();
+public class Login extends PageInitializer {
 
-	@Given("User is on the GeniusLIS signUp page")
-	public void user_is_on_the_GeniusLIS_signUp_page() {
-		String title = driver.getTitle();
-		 System.out.println(title);
+	LoginPageElements logIn = new LoginPageElements();
+	
+	//-------------------School Staff-----------------
+
+	@When("a School Staff User logs in with username {string} and password {string}")
+	public void a_School_Staff_User_logs_in_with_username_and_password(String username, String password) {
+		CommonMethods.jsClick(homePageElements.homePageLoginButton);
+		loginPageElements.usernameLogIn.sendKeys(username);
+		loginPageElements.passwordLogIn.sendKeys(password);
+		loginPageElements.loginBtn.click();
 	}
 
-	
-
-	@When("User signs up")
-	public void user_signs_in() throws InterruptedException {
-		
-		Thread.sleep(5000);
-		
-		jsClick(driver.findElement(By.xpath("//*[@id='root']/nav/div[1]/div[2]/button")));
-		signUp.firstname.sendKeys("");
-		signUp.lastName.sendKeys("Hudzenko");
-		signUp.email.sendKeys("yuliia3@geniusplaza.com");
-		signUp.password.sendKeys("123123");
-		driver.findElement(By.xpath("//*[@id='root']/div[3]/div[1]/div/div[2]/form/div[5]/button")).click();
-		
+	@Then("the School Staff User should be successfully logged in and sees {string}")
+	public void the_School_Staff_User_should_be_successfully_logged_in(String MyClasses) {
+		// Verifying text with assertion
+		Assert.assertTrue(geniusLISTeacherLandingPageElements.myClassesText.getText().contentEquals(MyClasses));
 	}
 
-	@Then("User should be successfully sign in")
-	public void user_should_be_successfully_sign_in() {
-	  String text = driver.getTitle();
-	  System.out.println(text);
+	// ------------------------Teacher-------------------------
+
+	@When("a Teacher User logs in with username {string} and password {string}")
+	public void a_Teacher_User_logs_in_with_username_and_password(String username, String password) {
+		CommonMethods.jsClick(homePageElements.homePageLoginButton);
+		loginPageElements.usernameLogIn.sendKeys(username);
+		loginPageElements.passwordLogIn.sendKeys(password);
+		loginPageElements.loginBtn.click();
 	}
 
-	
-	
-	
-
-
-	@When("User is logs in")
-	public void user_is_logs_in() {
-	  jsClick(driver.findElement(By.xpath("//*[@id='root']/nav/div[1]/div[2]/button")));
-	  signUp.usernameLogIn.sendKeys("dictrictest");
-	  signUp.passwordLogIn.sendKeys("12345678");
-	  signUp.loginBtn.click();
+	@Then("the Teacher should be successfully log in and sees {string}")
+	public void the_Teacher_should_be_successfully_log_in_and_sees(String myClasses) {
+		// Verifying text with assertion
+		Assert.assertTrue(geniusLISTeacherLandingPageElements.myClassesText.getText().contentEquals(myClasses));
+	}
+//----------------------------College_Uniwersity-------------------------
+	@When("a College\\/University User logs in with username {string} and password {string}")
+	public void a_College_University_User_logs_in_with_username_and_password(String username, String password) {
+		CommonMethods.jsClick(homePageElements.homePageLoginButton);
+		loginPageElements.usernameLogIn.sendKeys(username);
+		loginPageElements.passwordLogIn.sendKeys(password);
+		loginPageElements.loginBtn.click();
 	}
 
-	@Then("User should be successfully log in")
-	public void user_should_be_successfully_log_in() {
-	  String text = driver.getTitle();
-	  System.out.println(text);
+	@Then("the College\\/University User should be successfully logged in and sees {string}")
+	public void the_College_University_User_should_be_successfully_logged_in_and_sees(String myDistrict) {
+		// Verifying text with assertion
+		Assert.assertTrue(geniusLISTeacherLandingPageElements.myClassesText.getText().contentEquals(myDistrict));
+}
+	
+	//------------------Dictrict----------------------------------
+	
+	@When("a Disctict Staff User logs in with username {string} and password {string}")
+	public void a_Disctict_Staff_User_logs_in_with_username_and_password(String username, String password) {
+		CommonMethods.jsClick(homePageElements.homePageLoginButton);
+		loginPageElements.usernameLogIn.sendKeys(username);
+		loginPageElements.passwordLogIn.sendKeys(password);
+		loginPageElements.loginBtn.click();
 	}
 
-
-
-
-
-	
+	@Then("the District Staff User should be successfully logged in and sees {string}")
+	public void the_District_Staff_User_should_be_successfully_logged_in_and_sees(String myDistrict) {
+		// Verifying text with assertion
+				Assert.assertTrue(geniusLISTeacherLandingPageElements.myClassesText.getText().contentEquals(myDistrict));
+}
 }

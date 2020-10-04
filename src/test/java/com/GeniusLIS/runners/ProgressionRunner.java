@@ -13,7 +13,7 @@ import cucumber.api.junit.Cucumber;			// for cucumber 4.3 version
 @CucumberOptions(
 		features="src/test/resources/features"
 		,glue="com.GeniusLIS.steps"	
-		,dryRun = false
+		,dryRun =false
 		,tags = "@progression" 
 		,plugin= {"pretty" 
 				, "html:target/html/cucumber-default-report"

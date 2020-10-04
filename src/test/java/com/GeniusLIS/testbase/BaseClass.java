@@ -11,8 +11,15 @@ import org.openqa.selenium.safari.SafariDriver;
 import com.GeniusLIS.utils.ConfigsReader;
 import com.GeniusLIS.utils.Constants;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+
+
+
 public class BaseClass {
 
+	
 	public static WebDriver driver;
 
 
@@ -21,11 +28,11 @@ public class BaseClass {
 		
 		switch(ConfigsReader.getProperty("browser").toLowerCase()) {
 		case "chrome" :
-			System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			break;
 		case "firefox" : 
-			System.setProperty("webdriver.gecko.driver", Constants.GECKO_DRIVER_PATH);
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			break;
 		case "Safari" :

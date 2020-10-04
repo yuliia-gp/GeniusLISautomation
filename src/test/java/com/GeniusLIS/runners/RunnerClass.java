@@ -13,8 +13,8 @@ import cucumber.api.junit.Cucumber;			// for cucumber 4.3 version
 @CucumberOptions(
 		features="src/test/resources/features"
 		,glue="com.GeniusLIS.steps"	
-		,dryRun = true
-		,tags = "@smoke" 
+		,dryRun = false
+		,tags = "@test1" 
 		,plugin= {"pretty" 
 				, "html:target/html/cucumber-default-report"
 				, "json:target/cucumber.json"

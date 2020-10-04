@@ -2,10 +2,10 @@ package com.GeniusLIS.utils;
 
 public class Constants {
 	
-	//public static final String CHROME_DRIVER_PATH = System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver";
-	public static final String CHROME_DRIVER_PATH = "/Users/yuliia/git/GeniusLIS/GeniusDoctor/src/test/resources/drivers/chromedriver";
+	//public static final String CHROME_DRIVER_PATH1 = System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver";
+	//public static final String CHROME_DRIVER_PATH = "/Users/yuliia/git/GeniusLIS/GeniusDoctor/src/test/resources/drivers/chromedriver";
 			
-	public static final String GECKO_DRIVER_PATH = System.getProperty("user.dir") + "/src/test/resources/drivers/geckodriver";
+	//public static final String GECKO_DRIVER_PATH = System.getProperty("user.dir") + "/src/test/resources/drivers/geckodriver";
 	
 	public static final int PAGE_LOAD_TIME = 30;
 	
