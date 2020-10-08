@@ -9,7 +9,7 @@ Feature: Login
   @test1
   Scenario: School Staff Login
     When a School Staff User logs in with username "alyssadirector1" and password "12345678"
-    #Then the School Staff User should be successfully logged in and sees "My Classes"
+    Then the School Staff User should be successfully logged in and sees "My Classes"
 
   
   Scenario: Teacher Login

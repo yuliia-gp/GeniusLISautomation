@@ -17,7 +17,7 @@ public class LoginPageElements extends CommonMethods {
 	@FindBy(name = "password")
 	public WebElement passwordLogIn;
 
-	@FindBy(xpath = "//*[@id='root']/div[2]/div/div/div/div/form/div[3]/button")
+	@FindBy(xpath = "//button[contains(text(),'Login')]")
 	public WebElement loginBtn;
 
 	public LoginPageElements() {

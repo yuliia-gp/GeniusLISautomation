@@ -20,7 +20,7 @@ public class Login extends PageInitializer {
 		CommonMethods.jsClick(homePageElements.homePageLoginButton);
 		loginPageElements.usernameLogIn.sendKeys(username);
 		loginPageElements.passwordLogIn.sendKeys(password);
-		//loginPageElements.loginBtn.click();
+		loginPageElements.loginBtn.click();
 	}
 
 	@Then("the School Staff User should be successfully logged in and sees {string}")
