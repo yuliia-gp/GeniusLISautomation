@@ -6,12 +6,12 @@ Feature: Login
    Given User is on the GeniusLIS Home Page
 
 
-  @test1
+  
   Scenario: School Staff Login
     When a School Staff User logs in with username "alyssadirector1" and password "12345678"
     Then the School Staff User should be successfully logged in and sees "My Classes"
 
-  
+  @test1
   Scenario: Teacher Login
     When a Teacher User logs in with username "TeacherSt" and password "123123"
     Then the Teacher should be successfully log in and sees "My Classes"

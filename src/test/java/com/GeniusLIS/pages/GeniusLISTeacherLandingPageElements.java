@@ -9,8 +9,11 @@ import com.GeniusLIS.utils.CommonMethods;
 public class GeniusLISTeacherLandingPageElements extends CommonMethods{
 
 	/** My Classes Text */
-		@FindBy(xpath = "//*[@id='root']/div[2]/div[2]/div[1]/nav/ol/li")
+		@FindBy(xpath = "//*[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div/div[1]")
 		public WebElement myClassesText;
+		
+		@FindBy(xpath = "//*[@id='root']/div[1]/div[2]/div[1]/nav/ol")
+		public WebElement myClassTeacher;
 		
 
 		
