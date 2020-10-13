@@ -7,7 +7,7 @@ public class Constants {
 			
 	//public static final String GECKO_DRIVER_PATH = System.getProperty("user.dir") + "/src/test/resources/drivers/geckodriver";
 	
-	public static final String EXECUTION_PLATFORM = "local"; // local or Jenkins  
+	public static final String EXECUTION_PLATFORM = "Jenkins"; // local or Jenkins  
 	public static final int PAGE_LOAD_TIME = 30;
 	
 	public static final int IMPLICIT_LOAD_TIME = 10;
